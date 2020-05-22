@@ -1,0 +1,87 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link href="" rel="shortcut icon" type="image/x-icon">
+    <title>Animation</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+</head>
+
+<body>
+    <div id="first" class="container-fluid"  style="background-color: rgba(0, 0, 0, 0);background: url(assets/img/b1.jpg) no-repeat top/cover;width: 100%;height: 100vh;opacity: 1;visibility: inherit;">
+        <img src="assets/img/slide1-p1.png" alt="" style="width: 275px; height: 275px;" class="sun e one">
+        <div class="col-sm-offset-1 col-sm-5">
+            <h4 class="e two">Discover new worlds! </h4>
+            <p class="e three">Curabitur aliquet quam id dui posuere blandit. Curabitur aliquet quam id dui posuere blandit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
+            <button class="btn btn-primary e four">Join</button><button class="btn btn-success e four">Sign up</button>
+        </div>
+        <div class="col-sm-6 e five">
+            <img src="assets/img/slide1-p4.png" height="100%" class="">
+        </div>
+    </div>
+
+    <div id="second" class="container-fluid"  style="background-color: rgba(0, 0, 0, 0);background: url(assets/img/b2.jpg) no-repeat top/cover;width: 100%;height: 100vh;opacity: 1;visibility: inherit;">
+        <img src="assets/img/slide2-p2.png" alt="" width="29" class="baloon e one">
+        <img src="assets/img/slide2-p3.png" alt="" width="39" class="baloon1 e one">
+        
+        <img src="assets/img/slide2-p5.png" alt="" width="60" class="baloon3 e one">
+        <img src="assets/img/slide2-p4.png" alt="" width="102" class="baloon2 e one">
+        <div class="col-sm-offset-1 col-sm-5">
+            <h4 class="e two">Discover new worlds! </h4>
+            <p class="e three">Curabitur aliquet quam id dui posuere blandit. Curabitur aliquet quam id dui posuere blandit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
+            <button class="btn btn-primary e four">Buy now</button>
+            <p><img src="assets/img/slide2-p6.png" height="139" class="e anmPulse" style="margin-top: 60px;"></p>
+        </div>
+        <img src="assets/img/slide2-p7.png" height="100%" class="e five mobile">
+        <img src="assets/img/slide2-p8.png" height="100%" class="e anmFadeIn icn">
+    </div>
+
+    <div id="third" class="container-fluid" style="background-color: rgba(0, 0, 0, 0);background: url(assets/img/b2.jpg) no-repeat top/cover;padding-top: 70px;width: 100%;height: 100vh;opacity: 1;visibility: inherit;">
+        <div class="sp-container">
+            <h2 class="frame-1 e">It's destroying the planet</h2>
+            <h2 class="frame-2 e">It's mass, mechanized murder</h2>
+            <h2 class="frame-3 e">You can stop it</h2>
+            <h2 class="frame-4 e">Now!</h2>
+            <h2 class="frame-5 e"><span>Save the planet.</span> <span>Love life.</span> <span>Go vegan.</span></h2>
+            <a class="sp-circle-link e" href="#">Join us!</a>
+        </div>
+    </div>
+</body>
+
+<!-- Latest compiled and minified JavaScript -->
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.transit.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#second").css({'display':'none'});
+        setTimeout(function(){ 
+            (function($){
+                (function fadeNext(collection){
+                    collection.eq(0).fadeIn(1000, function(){
+                        (collection=collection.slice(1)).length 
+                        && fadeNext(collection)
+                    });
+                })($('.e'))
+            })(jQuery)
+        },1000);
+
+        setTimeout(function(){ 
+            $("#first").fadeOut();
+            $("#second").fadeIn();
+        }, 7100);
+        setTimeout(function(){ 
+            $("#second").fadeOut();
+            $("#third").fadeIn();
+        }, 17100);
+    });
+</script>
+
+
+</html>
